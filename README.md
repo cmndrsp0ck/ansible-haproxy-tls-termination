@@ -46,7 +46,7 @@ Once the role is installed you can set it up in your playbook.
 
     - hosts: load_balancer
       roles:
-          - { role: haproxy-tls }
+          - { role: cmndrsp0ck.haproxy-tls }
       become: True
 
 License
