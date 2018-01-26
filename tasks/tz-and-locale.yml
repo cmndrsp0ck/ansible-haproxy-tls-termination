@@ -1,0 +1,22 @@
+---
+# Set timezone and locale
+# Variable in defaults/main.yml
+- name: Set locale
+  command: "/usr/sbin/update-locale LANG={{ locale }}"
+
+- name: Set /etc/localtime
+  file:
+    src: /usr/share/zoneinfo/{{ timezone }}
+    path: /etc/localtime
+    state: link
+
+- name: set /etc/timezone Reconfigure tzdata to your location
+  template:
+    src: timezone.j2
+    dest: /etc/timezone
+    owner: root
+    group: root
+    mode: 0644
+
+- name: update tzdata
+  command: /usr/sbin/dpkg-reconfigure --frontend noninteractive tzdata

@@ -1,0 +1,121 @@
+---
+# Set user limits
+- name: Set root limits
+  pam_limits:
+    domain: root
+    limit_item: nofile
+    limit_type: "{{ item }}"
+    value: 10000000
+    backup: yes
+  with_items:
+    - hard
+    - soft
+
+- name: Set haproxy limits
+  pam_limits:
+    domain: haproxy
+    limit_item: nofile
+    limit_type: "{{ item }}"
+    value: 5000000
+    backup: yes
+  with_items:
+    - hard
+    - soft
+
+# Set sysctl limits
+- name: set swappiness
+  sysctl:
+    name: vm.swappiness
+    value: 10
+    sysctl_set: yes
+    state: present
+    reload: yes
+
+- name: set maximum file handles
+  sysctl:
+    name: fs.file-max
+    value: 5000000
+    sysctl_set: yes
+    state: present
+    reload: yes
+
+- name: set netdev_max_backlog
+  sysctl:
+    name: net.core.netdev_max_backlog
+    value: 65534
+    sysctl_set: yes
+    state: present
+    reload: yes
+
+- name: set somaxconn
+  sysctl:
+    name: net.core.somaxconn
+    value: 65534
+    sysctl_set: yes
+    state: present
+    reload: yes
+
+- name: set tcp_max_syn_backlog
+  sysctl:
+    name: net.ipv4.tcp_max_syn_backlog
+    value: 65534
+    sysctl_set: yes
+    state: present
+    reload: yes
+
+- name: set ip_local_port_range
+  sysctl:
+    name: net.ipv4.ip_local_port_range
+    value: '1024 65535'
+    sysctl_set: yes
+    state: present
+    reload: yes
+
+- name: set tcp_tw_reuse
+  sysctl:
+    name: net.ipv4.tcp_tw_reuse
+    value: 1
+    sysctl_set: yes
+    state: present
+    reload: yes
+
+- name: set rmem_default and wmem_default
+  sysctl:
+    name: "{{ item }}"
+    value: 6145728
+    sysctl_set: yes
+    state: present
+    reload: yes
+  with_items:
+    - net.core.rmem_default
+    - net.core.wmem_default
+
+- name: set rmem_max and wmem_max
+  sysctl:
+    name: "{{ item }}"
+    value: 67108864
+    sysctl_set: yes
+    state: present
+    reload: yes
+  with_items:
+    - net.core.rmem_max
+    - net.core.wmem_max
+
+- name: set tcp_rmem and tcp_wmem
+  sysctl:
+    name: "{{ item }}"
+    value: '4096 1048576 67108864'
+    sysctl_set: yes
+    state: present
+    reload: yes
+  with_items:
+    - net.ipv4.tcp_rmem
+    - net.ipv4.tcp_wmem
+
+- name: set tcp_fin_timeout
+  sysctl:
+    name: net.ipv4.tcp_fin_timeout
+    value: 10
+    sysctl_set: yes
+    state: present
+    reload: yes

@@ -1,0 +1,23 @@
+galaxy_info:
+  author: barajasfab
+  description: haproxy configured to use TLS and floating ip reassignment.
+  company: N/A
+
+  license: license (GPLv2, CC-BY, etc)
+
+  min_ansible_version: 2.4
+
+  github_branch: master
+
+  platforms:
+  - name: Debian
+    versions:
+    - 9.2
+    - 9.3
+
+  galaxy_tags:
+    - haproxy
+    - TLS
+    - DigitalOcean
+
+dependencies: []
