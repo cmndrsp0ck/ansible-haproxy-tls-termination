@@ -10,10 +10,9 @@ galaxy_info:
   github_branch: master
 
   platforms:
-  - name: Debian
+  - name: debian
     versions:
-      - 9.2
-      - 9.3
+      - 9
 
   galaxy_tags:
     - haproxy
