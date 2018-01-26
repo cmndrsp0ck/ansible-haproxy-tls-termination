@@ -40,7 +40,14 @@ You should install the role before attempting to execute directly from a playboo
 
 or
 
-    ansible-galaxy install barajasfab.haproxy-tls
+    ansible-galaxy install cmndrsp0ck.haproxy-tls
+
+Once the role is installed you can set it up in your playbook.
+
+    - hosts: load_balancer
+      roles:
+          - { role: haproxy-tls }
+      become: True
 
 License
 -------
