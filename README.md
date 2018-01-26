@@ -36,6 +36,10 @@ Example usage
 
 You should install the role before attempting to execute directly from a playbook since you'll need to place your cert.pem file in the role's **files** directory.
 
+    ansible-galaxy install -r requirements.yml
+
+or
+
     ansible-galaxy install barajasfab.haproxy-tls
 
 License
