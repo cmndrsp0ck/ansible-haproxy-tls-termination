@@ -11,7 +11,7 @@ A TLS certificate is required along with the private key in one file. Please use
 Role Variables
 --------------
 
-I recommend setting the *do_token* and *ha_auth_key* variables in **group_vars/*group_name*** and setting them to the values stored in an ansible-vault encrypted file in **group_vars/all/vault**
+I recommend setting the *do_token* and *ha_auth_key* variables in **group_vars/*group_name*/vars.yml** and setting them to the values stored in an ansible-vault encrypted file in **group_vars/*group_name*/vault.yml**
 
     # DigitalOcean access token
     do_token: "{{ vault_do_token }}"
