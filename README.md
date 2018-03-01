@@ -44,7 +44,7 @@ Once the role is installed you can set it up in your playbook.
 
     - hosts: load_balancer
       roles:
-          - { role: cmndrsp0ck.haproxy-tls }
+          - { role: cmndrsp0ck.ansible-haproxy-tls-termination }
       become: True
 
 License

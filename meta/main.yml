@@ -1,5 +1,5 @@
 galaxy_info:
-  author: barajasfab
+  author: cmndrsp0ck
   description: haproxy configured to use TLS and floating ip reassignment.
   company: N/A
 
