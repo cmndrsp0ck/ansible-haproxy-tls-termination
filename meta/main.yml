@@ -3,7 +3,7 @@ galaxy_info:
   description: haproxy configured to use TLS and floating ip reassignment.
   company: N/A
 
-  license: license (GPLv2, CC-BY, etc)
+  license: GPL-3.0
 
   min_ansible_version: 2.4
 

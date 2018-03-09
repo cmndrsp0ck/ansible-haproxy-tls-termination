@@ -85,7 +85,7 @@
     group: root
     mode: 0600
 
-- name: configura haresources
+- name: configure haresources
   template:
     src: haresources.j2
     dest: /etc/ha.d/haresources

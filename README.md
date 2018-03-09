@@ -50,4 +50,4 @@ Once the role is installed you can set it up in your playbook.
 License
 -------
 
-BSD
+GPL-3.0

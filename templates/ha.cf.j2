@@ -2,3 +2,7 @@ node {{ primary_name }}
 ucast eth0 {{ primary_address }}
 node {{ secondary_name }}
 ucast eth0 {{ secondary_address }}
+warntime 150ms
+deadtime 300ms
+keepalive 50ms
+initdead 60
