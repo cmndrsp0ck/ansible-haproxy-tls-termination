@@ -1,4 +1,4 @@
-haproxy-tls
+ansible-haproxy-tls-termination
 =========
 
 This role will configure two haproxy nodes in an active-passive configuration on DigitalOcean Droplets. The provided TLS certificate will be configured on the haproxy nodes for TLS termination.
@@ -38,7 +38,7 @@ You should install the role before attempting to execute directly from a playboo
 
 or
 
-    ansible-galaxy install cmndrsp0ck.haproxy-tls
+    ansible-galaxy install cmndrsp0ck.ansible-haproxy-tls-termination
 
 Once the role is installed you can set it up in your playbook.
 
