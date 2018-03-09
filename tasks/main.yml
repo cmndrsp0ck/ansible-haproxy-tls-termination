@@ -36,6 +36,12 @@
     - heartbeat
     - curl
 
+- name: Configure pacemaker - disable stonith
+  shell: crm_attribute --type crm_config --name stonith-enabled --update false
+
+- name: Configure pacemaker  quorum policy
+  shell:  crm_attribute --type crm_config --name no-quorum-policy --update ignore
+
 - name: Comment out SysVStartPriority for heartbeat
   lineinfile:
     path: /lib/systemd/system/heartbeat.service
