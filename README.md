@@ -13,11 +13,13 @@ Role Variables
 
 I recommend setting the *do_token* and *ha_auth_key* variables in **group_vars/*group_name*/vars.yml** and setting them to the values stored in an ansible-vault encrypted file in **group_vars/*group_name*/vault.yml**
 
-    # DigitalOcean access token
-    do_token: "{{ vault_do_token }}"
+```ansible
+# DigitalOcean access token
+do_token: "{{ vault_do_token }}"
 
-    # Generated ha auth key.
-    ha_auth_key: "{{ vault_ha_auth_key }}"
+# Generated ha auth key.
+ha_auth_key: "{{ vault_ha_auth_key }}"
+```
 
 Just don't forget to set *vault_do_token* and *vault_ha_auth_key*.
 
@@ -38,13 +40,13 @@ You should install the role before attempting to execute directly from a playboo
 
 or
 
-    ansible-galaxy install cmndrsp0ck.ansible-haproxy-tls-termination
+    ansible-galaxy install ansible-haproxy-tls-termination
 
 Once the role is installed you can set it up in your playbook.
 
     - hosts: load_balancer
       roles:
-          - { role: cmndrsp0ck.ansible-haproxy-tls-termination }
+          - { role: ansible-haproxy-tls-termination }
       become: True
 
 License
