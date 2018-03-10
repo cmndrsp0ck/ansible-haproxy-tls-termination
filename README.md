@@ -38,10 +38,6 @@ You should install the role before attempting to execute directly from a playboo
 
     ansible-galaxy install -r requirements.yml
 
-or
-
-    ansible-galaxy install ansible-haproxy-tls-termination
-
 Once the role is installed you can set it up in your playbook.
 
     - hosts: load_balancer
